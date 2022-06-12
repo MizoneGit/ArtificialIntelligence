@@ -1,0 +1,15 @@
+@import url("../../fonts/OpenSans/styles/style.css");
+@import url("../../fonts/CircularStd/styles/style.css");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1146px;
+  margin: 0 auto;
+}
+.container .test {
+  display: flex;
+  flex-display: block;
+}

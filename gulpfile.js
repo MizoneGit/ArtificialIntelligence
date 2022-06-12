@@ -1,26 +1,29 @@
-const gulp = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const minifyCSS = require('gulp-clean-css');
-const watch = require('gulp-watch');
-const rename = require('gulp-rename');
+const gulp = require('gulp'),
+      sass = require('gulp-sass')(require('sass')),
+      watch = require('gulp-watch'),
+      prefixer = require("gulp-autoprefixer"),
+      browserSync = require("browser-sync").create();
 
-gulp.task('css-minify', function() {
-    return gulp.src('./src/assets/styles/*.css')
-        .pipe(minifyCSS())
-        .pipe(rename({
-            basename: "style",
-            suffix: ".min",
-            extname: ".css"
-        }))
-        .pipe(gulp.dest('./src/assets/styles/'));
-});
+const config = {
+    src: {
+        sass: "./src/assets/styles/sass/**/*.{sass,scss}",
+        css: "./src/assets/styles/css/**/*.css",
+    },
+    dist: {
+        css: './src/assets/styles/css/'
+    }
+};
 
-gulp.task('scss-compile', function() {
-    return gulp.src('./src/assets/styles/*.scss')
+gulp.task('sass', () => {
+    return gulp
+        .src(config.src.sass)
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulp.dest('./src/assets/styles/'));
+        .pipe(prefixer())
+        .pipe(gulp.dest(config.dist.css))
+        .pipe(browserSync.stream());
 });
 
-gulp.task('scss', function () {
-    gulp.watch('./src/assets/styles/style.scss', gulp.series('scss-compile', 'css-minify'))
+gulp.task('watch', (watchEnd) => {
+    gulp.watch(config.src.sass, gulp.series('sass')).on('change', browserSync.reload);
+    watchEnd();
 });
