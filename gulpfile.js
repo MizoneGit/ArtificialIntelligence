@@ -23,7 +23,7 @@ gulp.task('sass', () => {
         .pipe(browserSync.stream());
 });
 
-gulp.task('watch', (watchEnd) => {
+gulp.task('scss', (watchEnd) => {
     gulp.watch(config.src.sass, gulp.series('sass')).on('change', browserSync.reload);
     watchEnd();
 });

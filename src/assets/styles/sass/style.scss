@@ -34,6 +34,29 @@ a {
   color: #FFFFFF;
 }
 
+h1, h2, h3 {
+  color: #FFFFFF;
+  line-height: 130%;
+}
+
+h1 {
+  font-size: 55px;
+  font-weight: 800;
+
+  @media screen and (max-width: 640px) {
+    font-size: 44px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 32px;
+  }
+}
+
+p {
+  font-size: 16px;
+  color: #FFFFFF;
+  line-height: 160%;
+}
+
 .btn {
   color: #FFFFFF;
   padding: 15px 30px;
@@ -130,5 +153,109 @@ a {
 
   @media screen and (max-width: 1024px) {
     display: none;
+  }
+}
+
+.about {
+  padding-bottom: 99px;
+
+  &__body {
+    padding: 160px 0 190px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    @media screen and (max-width: 990px) {
+      padding: 80px 0 100px;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+    @media screen and (max-width: 640px) {
+      padding: 40px 0 70px;
+    }
+  }
+  &__content {
+    flex: 1.1;
+  }
+  &__text {
+    text-transform: uppercase;
+    color: #3A68B8;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 160%;
+    padding-bottom: 10px;
+  }
+  &__title {
+    padding-bottom: 40px;
+
+    @media screen and (max-width: 990px) {
+      max-width: 600px;
+    }
+  }
+  &__description {
+    font-size: 18px;
+    padding-bottom: 50px;
+    max-width: 558px;
+  }
+  &__buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    button {
+      font-size: 20px;
+      @media screen and (max-width: 440px) {
+        width: 100%;
+      }
+    }
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+      max-width: 27px;
+      max-height: 26px;
+      margin-right: 10px;
+    }
+  }
+
+  &__image {
+    position: relative;
+    flex: 0.9;
+    width: 100%;
+
+    img {
+      position: absolute;
+      top: 50%;
+      right: -211px;
+      max-width: 632px;
+      transform: translateY(-50%);
+
+      @media screen and (max-width: 1580px) {
+        max-width: 100%;
+        width: 100%;
+        right: 0;
+      }
+    }
+    @media screen and (max-width: 990px) {
+      display: none;
+    }
+  }
+}
+
+.companies {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  column-gap: 40px;
+  row-gap: 40px;
+
+  @media screen and (max-width: 768px){
+    justify-content: center;
+    column-gap: 100px;
   }
 }
