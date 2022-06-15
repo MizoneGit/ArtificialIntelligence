@@ -51,6 +51,17 @@ h1 {
   }
 }
 
+h2 {
+  font-size: 40px;
+  font-weight: bold;
+  @media screen and (max-width: 640px) {
+    font-size: 36px;
+  }
+  @media screen and (max-width: 375px) {
+    font-size: 24px;
+  }
+}
+
 p {
   font-size: 16px;
   color: #FFFFFF;
@@ -76,9 +87,22 @@ p {
 }
 
 .header {
+  position: relative;
   max-height: 100px;
   padding: 22px 0;
   background: linear-gradient(180deg, rgba(8, 15, 29, 0.2), rgba(8, 16, 29, 1));
+
+  &:before {
+    content: '';
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) -41.9%, #FFFFFF 260.24%);
+    opacity: 0.02;
+    backdrop-filter: blur(200px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 
   &__inner {
     display: flex;
@@ -158,6 +182,17 @@ p {
 
 .about {
   padding-bottom: 99px;
+  &:before {
+    content: '';
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) -41.9%, rgba(255, 255, 255, 0.4) 260.24%);
+    opacity: 0.1;
+    backdrop-filter: blur(200px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
 
   &__body {
     padding: 160px 0 190px;
@@ -189,10 +224,7 @@ p {
   }
   &__title {
     padding-bottom: 40px;
-
-    @media screen and (max-width: 990px) {
-      max-width: 600px;
-    }
+    max-width: 600px;
   }
   &__description {
     font-size: 18px;
@@ -257,5 +289,62 @@ p {
   @media screen and (max-width: 768px){
     justify-content: center;
     column-gap: 100px;
+  }
+}
+
+.services {
+  background-color: #020A18;
+
+  &__body {
+    padding: 308px 0 170px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 262px;
+
+    @media screen and (max-width: 1580px) {
+      column-gap: 68px;
+      padding: 130px 0 170px;
+    }
+    @media screen and (max-width: 640px) {
+      padding: 40px 0 70px;
+    }
+  }
+  &__image {
+    position: relative;
+    flex: 0.9;
+    width: 100%;
+    max-width: 622px;
+
+    img {
+      position: absolute;
+      top: 50%;
+      left: -132px;
+      max-width: 725px;
+      transform: translateY(-50%);
+
+      @media screen and (max-width: 1580px) {
+        max-width: 100%;
+        width: 100%;
+        left: 0;
+      }
+    }
+    @media screen and (max-width: 990px) {
+      display: none;
+    }
+  }
+  &__content {
+    flex: 1.1;
+  }
+  &__description {
+    padding-bottom: 50px;
+    max-width: 460px;
+  }
+  &__title {
+    padding-bottom: 30px;
+    max-width: 484px;
+  }
+  &__btn {
+    display: block;
   }
 }
