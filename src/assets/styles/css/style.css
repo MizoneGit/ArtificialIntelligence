@@ -108,6 +108,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: -1;
 }
 .header__inner {
   display: flex;
@@ -204,6 +205,7 @@ p {
   left: 0;
   right: 0;
   bottom: 0;
+  z-index: -1;
 }
 .about__body {
   padding: 160px 0 190px;
@@ -311,6 +313,12 @@ p {
 
 .services {
   background-color: #020A18;
+  padding-bottom: 170px;
+}
+@media screen and (max-width: 640px) {
+  .services {
+    padding-bottom: 70px;
+  }
 }
 .services__body {
   padding: 308px 0 170px;
