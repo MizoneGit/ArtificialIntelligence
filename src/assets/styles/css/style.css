@@ -452,3 +452,49 @@ p {
 .slider .swiper-pagination-bullet-active {
   opacity: 1;
 }
+
+.reviews__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 170px;
+}
+.reviews__title {
+  padding-bottom: 40px;
+  min-width: 548px;
+}
+@media screen and (max-width: 990px) {
+  .reviews__title {
+    max-width: 548px;
+    min-width: unset;
+  }
+}
+@media screen and (max-width: 425px) {
+  .reviews__title {
+    text-align: center;
+  }
+}
+.reviews__text {
+  padding-bottom: 20px;
+  max-width: 440px;
+  opacity: 0.7;
+}
+.reviews__text:last-child {
+  padding-bottom: 0;
+}
+@media screen and (max-width: 425px) {
+  .reviews__text {
+    text-align: center;
+  }
+}
+.reviews__image {
+  width: 100%;
+}
+.reviews__image img {
+  width: 100%;
+}
+@media screen and (max-width: 990px) {
+  .reviews__image {
+    display: none;
+  }
+}
