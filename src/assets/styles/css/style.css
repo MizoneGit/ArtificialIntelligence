@@ -95,20 +95,7 @@ p {
   position: relative;
   max-height: 100px;
   padding: 22px 0;
-  background: linear-gradient(180deg, rgba(8, 15, 29, 0.2), rgb(8, 16, 29));
-}
-.header:before {
-  content: "";
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) -41.9%, #FFFFFF 260.24%);
-  opacity: 0.02;
-  -webkit-backdrop-filter: blur(200px);
-          backdrop-filter: blur(200px);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
+  background: #0B1320;
 }
 .header__inner {
   display: flex;
@@ -193,19 +180,7 @@ p {
 
 .about {
   padding-bottom: 99px;
-}
-.about:before {
-  content: "";
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) -41.9%, rgba(255, 255, 255, 0.4) 260.24%);
-  opacity: 0.1;
-  -webkit-backdrop-filter: blur(200px);
-          backdrop-filter: blur(200px);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
+  background: #09111F;
 }
 .about__body {
   padding: 160px 0 190px;
@@ -406,9 +381,13 @@ p {
   padding: 30px;
   position: relative;
   border-radius: 10px;
-  max-width: 298px;
+  max-width: 362px;
   display: flex;
-  align-items: flex-end;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: stretch;
+  height: auto !important;
+  box-sizing: border-box;
 }
 .slider__item:before {
   content: "";
@@ -424,10 +403,10 @@ p {
   z-index: 0;
   border-radius: 10px;
 }
-@media screen and (max-width: 425px) {
-  .slider__item:before {
-    border-radius: 0;
-  }
+.slider__item-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 .slider__item-image {
   display: flex;
@@ -436,7 +415,7 @@ p {
   min-height: 105px;
 }
 .slider__item-title {
-  padding-top: 30px;
+  padding-top: 14px;
   color: #FFFFFF;
   font-weight: 700;
   font-size: 25px;
@@ -444,6 +423,7 @@ p {
   text-align: center;
   opacity: 0.7;
   padding-bottom: 30px;
+  flex-grow: 1;
 }
 .slider__item-description {
   color: #FFFFFF;
@@ -453,11 +433,9 @@ p {
   opacity: 0.7;
   text-align: center;
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 1174px) {
   .slider__item {
     max-width: 100%;
-    box-sizing: border-box;
-    border-radius: 0;
   }
 }
 .slider .swiper-pagination {

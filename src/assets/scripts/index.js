@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
     const swiper = new Swiper('.swiper', {
         direction: 'horizontal',
-        loop: false,
+        loop: true,
+        setWrapperSize: true,
+        spaceBetween: 30,
         pagination: {
             el: '.swiper-pagination',
             clickable: true,
@@ -12,10 +14,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 slidesPerGroup: 1,
                 spaceBetween: 30
             },
+            768: {
+                slidesPerView: 2,
+                slidesPerGroup: 1,
+            },
             425: {
                 slidesPerView: 1,
                 slidesPerGroup: 1,
-                centeredSlides: true
+                spaceBetween: 20
             }
         }
     });
