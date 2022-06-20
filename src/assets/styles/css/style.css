@@ -120,6 +120,7 @@ p {
 }
 .btn:hover {
   background-color: #305597;
+  color: #ffffff;
 }
 
 .header {
@@ -324,11 +325,11 @@ p {
   flex-wrap: wrap;
   gap: 20px;
 }
-.about__buttons button {
+.about__buttons button, .about__buttons a {
   font-size: 20px;
 }
 @media screen and (max-width: 440px) {
-  .about__buttons button {
+  .about__buttons button, .about__buttons a {
     width: 100%;
   }
 }
@@ -469,11 +470,11 @@ p {
   }
 }
 .services__btn {
-  display: block;
+  text-align: center;
 }
-@media screen and (max-width: 425px) {
+@media screen and (max-width: 440px) {
   .services__btn {
-    width: 100%;
+    display: block;
   }
 }
 

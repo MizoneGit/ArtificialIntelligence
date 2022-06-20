@@ -114,6 +114,7 @@ p {
 
   &:hover {
     background-color: #305597;
+    color: #ffffff;
   }
 }
 
@@ -306,7 +307,7 @@ p {
     flex-wrap: wrap;
     gap: 20px;
 
-    button {
+    button, a {
       font-size: 20px;
       @media screen and (max-width: 440px) {
         width: 100%;
@@ -436,10 +437,10 @@ p {
     }
   }
   &__btn {
-    display: block;
+    text-align: center;
 
-    @media screen and (max-width: 425px) {
-      width: 100%;
+    @media screen and (max-width: 440px) {
+      display: block;
     }
   }
 }
