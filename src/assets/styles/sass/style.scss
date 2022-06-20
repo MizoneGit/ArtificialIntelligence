@@ -309,6 +309,7 @@ p {
 
     button, a {
       font-size: 20px;
+      text-align: center;
       @media screen and (max-width: 440px) {
         width: 100%;
       }
@@ -436,11 +437,17 @@ p {
       text-align: center;
     }
   }
+  &__links {
+    display: flex;
+  }
   &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 
     @media screen and (max-width: 440px) {
-      display: block;
+      width: 100%;
     }
   }
 }

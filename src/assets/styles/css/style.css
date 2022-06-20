@@ -327,6 +327,7 @@ p {
 }
 .about__buttons button, .about__buttons a {
   font-size: 20px;
+  text-align: center;
 }
 @media screen and (max-width: 440px) {
   .about__buttons button, .about__buttons a {
@@ -469,12 +470,18 @@ p {
     text-align: center;
   }
 }
+.services__links {
+  display: flex;
+}
 .services__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
 }
 @media screen and (max-width: 440px) {
   .services__btn {
-    display: block;
+    width: 100%;
   }
 }
 
